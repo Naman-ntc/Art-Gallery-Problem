@@ -31,14 +31,19 @@ Triangle is instance of node class inherited from monotone class
 ### Outline of algorithm
 ->We first break our polygon into monotone polygons. to do so we first identify the vertices that causes the nonmonotonicity of the polygon and then we resolve them accordingly. We simply iterate through the vertices of polygon
 and break it into monotone polygons.
+
 -> After partitioning our polygon Into monotone polygons we triangulate each polygon separately by chopping of
 triangles one by one and then recursively calling the function on remaining polygon .
+
 ->We then make a graph whose vertexes (of graph ,not polygon) are the triangles and two vertexes are joined by an
 edge(of graph ,not polygon) if they share a side in common
+
 ->We then run a depth-first-search on the graph and in this process we go to each vertex of the graph (that is each
 triangle) and colour the vertices by three different colours. This results in a three colouring of a graph whose vertices
 are the vertices of the polygon and whose edges are the edges of the the graph.
+
 ->After three colouring of the polygon we identify the colour that is used least no of times and identify the vertices of
 the polygon that were coloured by this colour ,placing cameras at these vertices provides the solution of our problem.
+
 
 Special thanks to Utkarsh Gupta, Sharvik Mittal (my project partners)
