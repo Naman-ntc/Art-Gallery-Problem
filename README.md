@@ -19,7 +19,7 @@ The user draws the input as shown in the left, and the program outputs in a new 
 ![Art Gallery Screenshot](ArtGallery-1.png)
 ![Art Gallery Screenshot](ArtGallery-2.png)
 
-###Design of program
+### Design of program
 We have created a main file with canvas package of racket. On running the file we get input window in which user can
 give input to the polygon by marking points on screen. Program takes points as input and opens the output window
 with tabs corresponding to triangulation, monotone partition, colouring and camera position. We have created objects
@@ -28,7 +28,7 @@ in separate monotone class inherited from polygon class. Monotone polygon is tri
 Triangle is instance of node class inherited from monotone class
 
 
-###Outline of algorithm
+### Outline of algorithm
 ->We first break our polygon into monotone polygons. to do so we first identify the vertices that causes the nonmonotonicity of the polygon and then we resolve them accordingly. We simply iterate through the vertices of polygon
 and break it into monotone polygons.
 -> After partitioning our polygon Into monotone polygons we triangulate each polygon separately by chopping of
