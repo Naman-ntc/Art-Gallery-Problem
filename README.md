@@ -1,16 +1,20 @@
 # Art-Gallery-Problem
-This is a project done for CS152 course under Proffesor Amitabha Sanyal. A complete UI + backend program to find approximate solutions to the Art Gallery Problem
+A complete UI + backend program to find approximate solutions to the Art Gallery Problem
 
-Art Gallery Problem : Given the layout (map) of an art gallery what is the minimum number of stationary guards (CC TV cameras) needed to guard every point in the art gallery
-
-
-So to begin and explore art gallery theorom and it's algorithm
-=> you need to install DrRacket IDE.
-=> open begin.rkt, make necessary changes at line 31 of code (It is the location of picture, change it to location of image present along with this folder) and there you go. Enter number of sides of Polygon and there you go, give input of polygon as points in CLOCKWISE order to obtain triangulation of polygon and minimum number of cameras.
+### Problem Desciption
+Art Gallery Problem : 
+Given the layout (map) of an art gallery what is the minimum number of stationary guards (CC TV cameras) needed to guard every point in the art gallery
 
 For more about Art Gallery Problem :
 https://en.wikipedia.org/wiki/Art_gallery_problem
 Also i have included the books we used for searching the algorithms to solve the problem.
+
+### Guide for running
+So to begin and explore art gallery theorom and it's algorithm
+
+* Install the DrRacket IDE.
+
+* Open the file begin.rkt. Run the program, enter number of sides of Polygon, give input of polygon using a plotting window as points in CLOCKWISE order to obtain triangulations of polygon and you'll get in return the minimum number of cameras along with their location.
 
 
 Here are screenshots of our program working
@@ -29,21 +33,18 @@ Triangle is instance of node class inherited from monotone class
 
 
 ### Outline of algorithm
-->We first break our polygon into monotone polygons. to do so we first identify the vertices that causes the nonmonotonicity of the polygon and then we resolve them accordingly. We simply iterate through the vertices of polygon
+* We first break our polygon into monotone polygons. to do so we first identify the vertices that causes the nonmonotonicity of the polygon and then we resolve them accordingly. We simply iterate through the vertices of polygon
 and break it into monotone polygons.
 
--> After partitioning our polygon Into monotone polygons we triangulate each polygon separately by chopping of
+* After partitioning our polygon Into monotone polygons we triangulate each polygon separately by chopping of
 triangles one by one and then recursively calling the function on remaining polygon .
 
-->We then make a graph whose vertexes (of graph ,not polygon) are the triangles and two vertexes are joined by an
+* We then make a graph whose vertexes (of graph ,not polygon) are the triangles and two vertexes are joined by an
 edge(of graph ,not polygon) if they share a side in common
 
-->We then run a depth-first-search on the graph and in this process we go to each vertex of the graph (that is each
+* We then run a depth-first-search on the graph and in this process we go to each vertex of the graph (that is each
 triangle) and colour the vertices by three different colours. This results in a three colouring of a graph whose vertices
 are the vertices of the polygon and whose edges are the edges of the the graph.
 
-->After three colouring of the polygon we identify the colour that is used least no of times and identify the vertices of
+* After three colouring of the polygon we identify the colour that is used least no of times and identify the vertices of
 the polygon that were coloured by this colour ,placing cameras at these vertices provides the solution of our problem.
-
-
-Special thanks to Utkarsh Gupta, Sharvik Mittal (my project partners)
